@@ -5,7 +5,7 @@ import PostList from './components/PostList';
 import PostSingle from './components/PostSingle';
 
 
-import './styles/css/index.css';
+import './styles/css/main.css';
 
 import registerServiceWorker from './registerServiceWorker';
 

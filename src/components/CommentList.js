@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
+import { Button, ListGroup } from 'react-bootstrap';
+
 
 
 class CommentList extends Component {
@@ -23,13 +25,15 @@ class CommentList extends Component {
         const { comments = [] } = this.props;
 
         return (
+    
           <div className="Card comments">
-              <button onClick={this.toggleComments.bind(this)}>
+              <h1>Comments</h1>
+              <Button bsStyle="danger" onClick={this.toggleComments.bind(this)}>
                   {this.state.showComments ? "Hide Comments" : "Show Comments"}
-              </button>
+              </Button>
 
               {this.state.showComments
-                  ? comments.map(comment => <Comment {...comment} key={comment.id} />)
+                  ? comments.map(comment => <ListGroup key={comment.id}> <Comment {...comment} key={comment.id} /></ListGroup>)
                   : null
               }
           </div>

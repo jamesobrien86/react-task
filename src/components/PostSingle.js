@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { getPostById } from '../services/http-service';
+import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 import User from './User'
 import Post from './Post'
@@ -42,10 +45,18 @@ class PostSingle extends Component {
 
         return (
             <div>
-                <Post {...post} />
-                <User {...post.user} />
-                <CommentList comments={post.comments} />
-
+                <Link className="btn btn-danger" to={`/posts/`}>Back</Link>
+                <Row>
+                    <Post {...post} />
+                </Row>
+                <Row>
+                    <User {...post.user} />
+                </Row>
+                <Row>
+                    <Col xs={12} md={12}>
+                        <CommentList comments={post.comments} />
+                    </Col>
+                </Row>
             </div>
         );
     }
