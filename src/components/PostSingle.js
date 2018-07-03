@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { getPostById } from '../services/http-service';
 
-import Post from './Post';
-import User from './User';
+import User from './User'
+import Post from './Post'
+import CommentList from './CommentList'
 
 class PostSingle extends Component {
     constructor(props) {
@@ -43,6 +44,8 @@ class PostSingle extends Component {
             <div>
                 <Post {...post} />
                 <User {...post.user} />
+                <CommentList comments={post.comments} />
+
             </div>
         );
     }
