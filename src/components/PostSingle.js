@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { getPostById } from '../services/http-service';
 
-import Post from './Post'
+import Post from './Post';
+import User from './User';
 
 class PostSingle extends Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class PostSingle extends Component {
         return (
             <div>
                 <Post {...post} />
-        
+                <User {...post.user} />
             </div>
         );
     }
